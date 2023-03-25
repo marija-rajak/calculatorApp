@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;800;900&display=swap");
+/* line 1, ../../../frontend mentor/calculator app/sass/base/_reset.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 3, ../../../frontend mentor/calculator app/sass/base/_typography.scss */
+* {
+  font-family: 'League Spartan', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+/* line 1, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+#keyboard {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  grid-template-rows: repeat(5, 40px);
+  grid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';
+  grid-auto-flow: row dense;
+  gap: 20px;
+  width: 300px;
+  height: 300px;
+}
+
+/* line 12, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+.digit:nth-of-type(3n + 1) {
+  grid-column-start: 3;
+}
+
+/* line 16, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+.digit:nth-of-type(3n + 2) {
+  grid-column-start: 2;
+}
+
+/* line 20, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+.digit:nth-of-type(3n + 3) {
+  grid-column-start: 1;
+}
+
+/* line 24, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+.digit:nth-of-type(10) {
+  grid-area: zero;
+}
+
+/* line 28, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+#decimalPoint {
+  grid-area: dPoint;
+}
+
+/* line 32, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+#deleteBtn {
+  grid-area: del;
+}
+
+/* line 36, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+#resetBtn {
+  grid-area: reset;
+}
+
+/* line 40, ../../../frontend mentor/calculator app/sass/layout/_main.scss */
+#calculateBtn {
+  grid-area: calculate;
+}
+
+/* line 1, ../../../frontend mentor/calculator app/sass/layout/_footer.scss */
+footer {
+  font-size: 11px;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+}
+
+/* line 7, ../../../frontend mentor/calculator app/sass/layout/_footer.scss */
+footer a {
+  color: #3e52a3;
+  font-size: 12px;
+}
+
+/*# sourceMappingURL=myStyle.css.map */

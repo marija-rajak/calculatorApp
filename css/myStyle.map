@@ -1,0 +1,22 @@
+{
+	"version": 3,
+	"file": "myStyle.css",
+	"sources": [
+		"../sass/myStyle.scss",
+		"../sass/helpers/_variables.scss",
+		"../sass/base/_reset.scss",
+		"../sass/base/_typography.scss",
+		"../sass/layout/_main.scss",
+		"../sass/layout/_footer.scss"
+	],
+	"sourcesContent": [
+		"@import 'helpers/variables.scss';\r\n@import 'base/reset.scss';\r\n@import 'base/typography';\r\n@import 'layout/main.scss';\r\n@import 'layout/footer.scss';\r\n",
+		"",
+		"* {\r\n\tmargin: 0;\r\n\tpadding: 0;\r\n\tbox-sizing: border-box;\r\n}",
+		"@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;800;900&display=swap'); \r\n\r\n* {\r\n\tfont-family: 'League Spartan', sans-serif;\r\n\tfont-size: 32px;\r\n\tfont-weight: 700;\r\n}",
+		"#keyboard {\r\n\tdisplay: grid;\r\n\tgrid-template-columns: repeat(4, 60px);\r\n\tgrid-template-rows: repeat(5, 40px);\r\n\tgrid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';\r\n\tgrid-auto-flow: row dense;\r\n\tgap: 20px;\r\n\twidth: 300px;\r\n\theight: 300px;\r\n}\r\n\r\n.digit:nth-of-type(3n + 1) {\r\n\tgrid-column-start: 3;\r\n}\r\n\r\n.digit:nth-of-type(3n + 2) {\r\n\tgrid-column-start: 2;\r\n}\r\n\r\n.digit:nth-of-type(3n + 3) {\r\n\tgrid-column-start: 1;\r\n}\r\n\r\n.digit:nth-of-type(10) {\r\n\tgrid-area: zero;\r\n}\r\n\r\n#decimalPoint {\r\n\tgrid-area: dPoint;\r\n}\r\n\r\n#deleteBtn {\r\n\tgrid-area: del;\r\n}\r\n\r\n#resetBtn {\r\n\tgrid-area: reset;\r\n}\r\n\r\n#calculateBtn {\r\n\tgrid-area: calculate;\r\n}\r\n",
+		"footer {\r\n\tfont-size: 11px; text-align: center;\r\n\tposition: sticky;\r\n\tbottom: 0;\r\n}\r\n\r\nfooter a {\r\n\tcolor: hsl(228, 45%, 44%);\r\n\tfont-size: 12px;\r\n}"
+	],
+	"names": [],
+	"mappings": "AGAA,OAAO,CAAC,gHAAI;;ADAZ,AAAA,CAAC,CAAC;EACD,MAAM,EAAE,CAAC;EACT,OAAO,EAAE,CAAC;EACV,UAAU,EAAE,UAAU;CACtB;;;ACFD,AAAA,CAAC,CAAC;EACD,WAAW,EAAE,4BAA4B;EACzC,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;CAChB;;;ACND,AAAA,SAAS,CAAC;EACT,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,eAAe;EACtC,kBAAkB,EAAE,eAAe;EACnC,mBAAmB,EAAE,mFAAmF;EACxG,cAAc,EAAE,SAAS;EACzB,GAAG,EAAE,IAAI;EACT,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;CACb;;;AAED,AAAA,MAAM,AAAA,YAAa,CAAA,MAAM,EAAE;EAC1B,iBAAiB,EAAE,CAAC;CACpB;;;AAED,AAAA,MAAM,AAAA,YAAa,CAAA,MAAM,EAAE;EAC1B,iBAAiB,EAAE,CAAC;CACpB;;;AAED,AAAA,MAAM,AAAA,YAAa,CAAA,MAAM,EAAE;EAC1B,iBAAiB,EAAE,CAAC;CACpB;;;AAED,AAAA,MAAM,AAAA,YAAa,CAAA,EAAE,EAAE;EACtB,SAAS,EAAE,IAAI;CACf;;;AAED,AAAA,aAAa,CAAC;EACb,SAAS,EAAE,MAAM;CACjB;;;AAED,AAAA,UAAU,CAAC;EACV,SAAS,EAAE,GAAG;CACd;;;AAED,AAAA,SAAS,CAAC;EACT,SAAS,EAAE,KAAK;CAChB;;;AAED,AAAA,aAAa,CAAC;EACb,SAAS,EAAE,SAAS;CACpB;;;ACzCD,AAAA,MAAM,CAAC;EACN,SAAS,EAAE,IAAI;EAAE,UAAU,EAAE,MAAM;EACnC,QAAQ,EAAE,MAAM;EAChB,MAAM,EAAE,CAAC;CACT;;;AAED,AAAA,MAAM,CAAC,CAAC,CAAC;EACR,KAAK,EAAE,OAAkB;EACzB,SAAS,EAAE,IAAI;CACf"
+}
