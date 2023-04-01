@@ -1,46 +1,124 @@
-#keyboard {
-	display: grid;
-	grid-template-columns: repeat(4, 60px);
-	grid-template-rows: repeat(5, 40px);
-	grid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';
-	grid-auto-flow: row dense;
-	gap: 20px;
-	width: 300px;
-	height: 300px;
-}
+#calculator {
+	width: 375px;
+	margin: 50px auto;
 
-.digit:nth-of-type(3n + 1) {
-	grid-column-start: 3;
-}
+	#control {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
 
-.digit:nth-of-type(3n + 2) {
-	grid-column-start: 2;
-}
+		#content {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-end;
+			flex-grow: 2;
 
-.digit:nth-of-type(3n + 3) {
-	grid-column-start: 1;
-}
+			div:nth-child(1) {
+				font-size: 0.7em;
+			}
+			div:nth-child(2) {
+				font-size: 0.3em;
+				padding-right: 20px;
+				padding-bottom: 2px;
+			}
+		}
 
-.digit:nth-of-type(10) {
-	grid-area: zero;
-}
+		#theme {
+			& div {
+				display: grid;
+				grid-template-columns: repeat(3, 15px);
+				justify-content: center;
+				align-items: center;
+				justify-items: center;
 
-#decimalPoint {
-	grid-area: dPoint;
-}
+				label {
+					font-size: 0.3em;
+				}
+			}
 
-#deleteBtn {
-	grid-area: del;
-}
+			.radios {
+				border-radius: 10px;
+				padding: 2px
 
-#resetBtn {
-	grid-area: reset;
-}
 
-#calculateBtn {
-	grid-area: calculate;
-}
+			}
+		}
+	}
 
-div#display {
-	height: 50px;
+	input [type="radio"] {
+		border: 5px solid green;
+	}
+	#keyboard {
+		display: grid;
+		grid-template-columns: repeat(4, 70px);
+		grid-template-rows: repeat(5, 45px);
+		grid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';
+		grid-auto-flow: row dense;
+		grid-column-gap: 15px;
+		grid-row-gap: 17px;
+		width: 100%;
+		padding: 25px;
+		border-radius: 10px;
+
+		.key {
+			box-shadow: 0 3px;
+			border-radius: 5px;
+			border: none;
+
+			span {
+				text-align: center;
+				display: inline;
+				vertical-align: middle;
+				line-height: 1em;
+			}
+		}
+
+		.digit:nth-of-type(3n + 1) {
+			grid-column-start: 3;
+		}
+
+		.digit:nth-of-type(3n + 2) {
+			grid-column-start: 2;
+		}
+
+		.digit:nth-of-type(3n + 3) {
+			grid-column-start: 1;
+		}
+
+		.digit:nth-of-type(10) {
+			grid-area: zero;
+		}
+
+		#decimalPoint {
+			grid-area: dPoint;
+		}
+
+		#deleteBtn {
+			grid-area: del;
+			span {
+				font-size: 0.7em;
+			}
+		}
+
+		#resetBtn {
+			grid-area: reset;
+			span {
+				font-size: 0.7em
+			}
+		}
+
+		#calculateBtn {
+			grid-area: calculate;
+		}
+	}
+
+	#display {
+		font-size: 1.3rem;
+		height: calc(1.3rem + 50px);
+		width: 100%;
+		margin: 20px 0 15px;
+		padding: 25px;
+		border-radius: 10px;
+	}
 }
