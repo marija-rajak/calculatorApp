@@ -3,6 +3,8 @@ const operatorKeys = document.getElementsByClassName('operator');
 const calculationBtn = document.getElementById('calculateBtn');
 const resetBtn = document.getElementById('resetBtn');
 const deleteBtn = document.getElementById('deleteBtn');
+const themeSelector = document.getElementsByName('theme');
+const elements = document.querySelectorAll('*');
 
 let display = document.getElementById('display');
 
@@ -12,6 +14,8 @@ let nextNumber;
 let result;
 
 let operator;
+
+let theme = 'default';
 
 for (let i = 0; i < digitKeys.length; i++) {
 	digitKeys[i].addEventListener('click', typeNumber);
@@ -40,6 +44,11 @@ resetBtn.addEventListener('click', function () {
 
 //
 deleteBtn.addEventListener('click', resetNumber);
+
+//
+themeSelector.forEach(function (selector) {
+	selector.addEventListener('click', setTheme);
+});
 
 //Collects digits user inputs and converts it into number, assign value to a proper number
 function typeNumber() {
@@ -123,4 +132,30 @@ function resetNumber() {
 	}
 	display.innerText = '';
 	console.log(123);
+}
+
+//get selected theme
+function setTheme() {
+	themeSelector.forEach(function (radio) {
+		if (radio.checked) {
+			theme = radio.value;
+		}
+	})
+
+	if (theme === 'light') {
+		elements.forEach(function (element) {
+			element.classList.add('theme-light');
+			element.classList.remove('theme-dark');
+		});
+	} else if (theme === 'dark') {
+		elements.forEach(function (element) {
+			element.classList.add('theme-dark');
+			element.classList.remove('theme-light');
+		});
+	} else {
+		elements.forEach(function (element) {
+			element.classList.remove('theme-dark');
+			element.classList.remove('theme-light');
+		});
+	}
 }

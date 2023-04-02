@@ -1,0 +1,51 @@
+:root {
+	--main-background: hsl(222, 26%, 31%); //main background
+	--keypad-background: hsl(223, 31%, 20%); //toggle background, keypad background
+	--screen-background: hsl(224, 36%, 15%); //screen background
+	--blue-background: hsl(225, 21%, 49%); //del and reset key background
+	--blue-active: hsl(225, 21%, 59%); //del and reset key active state
+	--blue-shadow: hsl(224, 28%, 35%); //del and reset key shadow
+	--red-background: hsl(6, 63%, 50%); //calculate key background, toggle theme button
+	--red-active: hsl(6, 63%, 60%); //calculate key and toggle theme button active state
+	--red-shadow: hsl(6, 70%, 34%); //calculate key shadow
+	--grey-background: hsl(30, 5%, 89%); //digit key background
+	--grey-active: hsl(30, 5%, 99%); //digit key active state
+	--grey-shadow: hsl(28, 16%, 65%); //digit key shadow
+	--dark-text: hsl(221, 14%, 31%); //keys text
+	--light-text: hsl(0, 0%, 100%); //display text
+}
+
+.theme-light {
+	--main-background: hsl(0, 0%, 90%); //main background
+	--keypad-background: hsl(0, 5%, 81%); //toggle background, keypad background
+	--screen-background: hsl(0, 0%, 93%); //screen background
+	--blue-background: hsl(185, 42%, 37%); //del and reset key background
+	--blue-active: hsl(185, 42%, 47%); //del and reset key active state
+	--blue-shadow: hsl(185, 58%, 25%); //del and reset key shadow
+	--red-background: hsl(25, 98%, 40%); //calculate key background, toggle theme button
+	--red-active: hsl(25, 98%, 50%); //calculate key and toggle theme button active state
+	--red-shadow: hsl(25, 99%, 27%); //calculate key shadow
+	--grey-background: hsl(45, 7%, 89%); //digit key background
+	--grey-active: hsl(45, 7%, 99%); //digit key active state
+	--grey-shadow: hsl(35, 11%, 61%); //digit key shadow
+	--dark-text: hsl(60, 10%, 19%); //keys text
+	--light-text: hsl(0, 0%, 100%); //display text
+}
+
+.theme-dark {
+	--main-background: hsl(268, 75%, 9%); //main background
+	--keypad-background: hsl(268, 71%, 12%); //toggle background, keypad background
+	--screen-background: hsl(268, 71%, 12%); //screen background
+	--blue-background: hsl(281, 89%, 26%); //del and reset key background
+	--blue-active: hsl(281, 89%, 36%); //del and reset key active state
+	--blue-shadow: hsl(285, 91%, 52%); //del and reset key shadow
+	--red-background: hsl(176, 100%, 44%); //calculate key background, toggle theme button
+	--red-active: hsl(176, 100%, 54%); //calculate key and toggle theme button active state
+	--red-shadow: hsl(177, 92%, 70%); //calculate key shadow
+	--grey-background: hsl(268, 47%, 21%); //digit key background
+	--grey-active: hsl(268, 47%, 31%); //digit key active state
+	--grey-shadow: hsl(290, 70%, 36%); //digit key shadow
+	--dark-text: hsl(52, 100%, 62%); //keys text
+	--light-text: hsl(0, 0%, 100%); //display text
+	--special-text: hsl(198, 20%, 13%); //calculate-key text
+}

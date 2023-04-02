@@ -1,5 +1,8 @@
-#calculator {
-	width: 375px;
+body {
+	background-color: var(--main-background);
+
+	#calculator {
+	width: 376px;
 	margin: 50px auto;
 
 	#control {
@@ -7,6 +10,11 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: flex-end;
+		color: var(--light-text);
+
+		&.theme-dark, &.theme-light {
+			color: var(--dark-text);
+		}
 
 		#content {
 			display: flex;
@@ -26,6 +34,7 @@
 
 		#theme {
 			& div {
+				width: 100%;
 				display: grid;
 				grid-template-columns: repeat(3, 15px);
 				justify-content: center;
@@ -34,6 +43,7 @@
 
 				label {
 					font-size: 0.3em;
+					text-align: center;
 				}
 			}
 
@@ -46,33 +56,18 @@
 		}
 	}
 
-	input [type="radio"] {
-		border: 5px solid green;
-	}
 	#keyboard {
 		display: grid;
 		grid-template-columns: repeat(4, 70px);
-		grid-template-rows: repeat(5, 45px);
+		grid-template-rows: repeat(5, 42px);
 		grid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';
 		grid-auto-flow: row dense;
-		grid-column-gap: 15px;
-		grid-row-gap: 17px;
+		grid-column-gap: 17px;
+		grid-row-gap: 19px;
 		width: 100%;
-		padding: 25px;
+		padding: 22px;
 		border-radius: 10px;
-
-		.key {
-			box-shadow: 0 3px;
-			border-radius: 5px;
-			border: none;
-
-			span {
-				text-align: center;
-				display: inline;
-				vertical-align: middle;
-				line-height: 1em;
-			}
-		}
+		background-color: var(--keypad-background);
 
 		.digit:nth-of-type(3n + 1) {
 			grid-column-start: 3;
@@ -96,16 +91,10 @@
 
 		#deleteBtn {
 			grid-area: del;
-			span {
-				font-size: 0.7em;
-			}
 		}
 
 		#resetBtn {
 			grid-area: reset;
-			span {
-				font-size: 0.7em
-			}
 		}
 
 		#calculateBtn {
@@ -114,11 +103,20 @@
 	}
 
 	#display {
-		font-size: 1.3rem;
+		font-size: 1.2rem;
+		font-weight: 700;
 		height: calc(1.3rem + 50px);
 		width: 100%;
 		margin: 20px 0 15px;
 		padding: 25px;
 		border-radius: 10px;
+		background-color: var(--screen-background);
+		color: var(--light-text);
+		text-align: right;
+
+		&.theme-dark, &.theme-light {
+			color: var(--dark-text);
+		}
 	}
+}
 }
