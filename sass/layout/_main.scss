@@ -2,8 +2,8 @@ body {
 	background-color: var(--main-background);
 
 	#calculator {
-		width: 375px;
-		margin: 50px auto;
+		width: 430px;
+		margin: 80px auto;
 
 		@media screen and (max-width: 375px) {
 			width: 327px;
@@ -28,11 +28,12 @@ body {
 				flex-grow: 2;
 
 				div:nth-child(1) {
-					font-size: 0.7em;
+					font-size: 0.8rem;
 				}
 
 				div:nth-child(2) {
-					font-size: 0.3em;
+					font-size: 0.4rem;
+					font-weight: 500;
 					padding-right: 20px;
 					padding-bottom: 2px;
 				}
@@ -48,28 +49,30 @@ body {
 					justify-items: center;
 
 					label {
-						font-size: 0.3em;
+						font-size: 0.4em;
 						text-align: center;
 					}
 				}
 
 				.radios {
 					border-radius: 10px;
-					padding: 2px
+					padding: 3px;
+					background-color: var(--keypad-background);
+					margin-top: 5px;
 				}
 			}
 		}
 
 		#keyboard {
 			display: grid;
-			grid-template-columns: repeat(4, 70px);
-			grid-template-rows: repeat(5, 42px);
+			grid-template-columns: repeat(4, 80px);
+			grid-template-rows: repeat(5, 45px);
 			grid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';
 			grid-auto-flow: row dense;
-			grid-column-gap: 17px;
-			grid-row-gap: 19px;
+			grid-column-gap: 20px;
+			grid-row-gap: 22px;
 			width: 100%;
-			padding: 22px;
+			padding: 25px;
 			border-radius: 10px;
 			background-color: var(--keypad-background);
 
@@ -115,8 +118,8 @@ body {
 
 		#display {
 			font-size: 1.2rem;
-			font-weight: 600;
-			height: calc(1.3rem + 50px);
+			font-weight: 700;
+			height: calc(1.2rem + 50px);
 			width: 100%;
 			margin: 20px 0 15px;
 			padding: 25px;

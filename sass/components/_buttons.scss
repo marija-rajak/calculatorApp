@@ -19,7 +19,7 @@ input[type="radio"] {
 .key {
 	box-shadow: 0 3px var(--grey-shadow);
 	background-color: var(--grey-background);
-	border-radius: 5px;
+	border-radius: 8px;
 	border: none;
 	cursor: pointer;
 
@@ -27,9 +27,9 @@ input[type="radio"] {
 		text-align: center;
 		display: inline;
 		vertical-align: bottom;
-		line-height: 1em;
+		line-height: 1.2rem;
 		color: var(--dark-text);
-		font-size: 28px;
+		font-size: 1rem;
 	}
 
 	&:active {
@@ -44,7 +44,7 @@ input[type="radio"] {
 	background-color: var(--blue-background);
 
 	span {
-		font-size: 0.6rem;
+		font-size: 0.7rem;
 		color: var(--light-text);
 		vertical-align: middle;
 	}
