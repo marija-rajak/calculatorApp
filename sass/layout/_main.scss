@@ -2,124 +2,140 @@ body {
 	background-color: var(--main-background);
 
 	#calculator {
-	width: 376px;
-	margin: 50px auto;
+		width: 375px;
+		margin: 50px auto;
 
-	#control {
-		width: 100%;
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-end;
-		color: var(--light-text);
-
-		&.theme-dark, &.theme-light {
-			color: var(--dark-text);
+		@media screen and (max-width: 375px) {
+			width: 327px;
 		}
 
-		#content {
+		#control {
+			width: 100%;
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-end;
-			flex-grow: 2;
+			color: var(--light-text);
 
-			div:nth-child(1) {
-				font-size: 0.7em;
+			&.theme-dark,
+			&.theme-light {
+				color: var(--dark-text);
 			}
-			div:nth-child(2) {
-				font-size: 0.3em;
-				padding-right: 20px;
-				padding-bottom: 2px;
-			}
-		}
 
-		#theme {
-			& div {
-				width: 100%;
-				display: grid;
-				grid-template-columns: repeat(3, 15px);
-				justify-content: center;
-				align-items: center;
-				justify-items: center;
+			#content {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+				flex-grow: 2;
 
-				label {
+				div:nth-child(1) {
+					font-size: 0.7em;
+				}
+
+				div:nth-child(2) {
 					font-size: 0.3em;
-					text-align: center;
+					padding-right: 20px;
+					padding-bottom: 2px;
 				}
 			}
 
-			.radios {
-				border-radius: 10px;
-				padding: 2px
+			#theme {
+				& div {
+					width: 100%;
+					display: grid;
+					grid-template-columns: repeat(3, 15px);
+					justify-content: center;
+					align-items: center;
+					justify-items: center;
 
+					label {
+						font-size: 0.3em;
+						text-align: center;
+					}
+				}
 
+				.radios {
+					border-radius: 10px;
+					padding: 2px
+				}
+			}
+		}
+
+		#keyboard {
+			display: grid;
+			grid-template-columns: repeat(4, 70px);
+			grid-template-rows: repeat(5, 42px);
+			grid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';
+			grid-auto-flow: row dense;
+			grid-column-gap: 17px;
+			grid-row-gap: 19px;
+			width: 100%;
+			padding: 22px;
+			border-radius: 10px;
+			background-color: var(--keypad-background);
+
+			.digit:nth-of-type(3n + 1) {
+				grid-column-start: 3;
+			}
+
+			.digit:nth-of-type(3n + 2) {
+				grid-column-start: 2;
+			}
+
+			.digit:nth-of-type(3n + 3) {
+				grid-column-start: 1;
+			}
+
+			.digit:nth-of-type(10) {
+				grid-area: zero;
+			}
+
+			#decimalPoint {
+				grid-area: dPoint;
+			}
+
+			#deleteBtn {
+				grid-area: del;
+			}
+
+			#resetBtn {
+				grid-area: reset;
+			}
+
+			#calculateBtn {
+				grid-area: calculate;
+			}
+
+			@media screen and (max-width: 375px) {
+				grid-template-columns: repeat(4, 60px);
+				grid-column-gap: 15px;
+				grid-template-rows: repeat(5, 60px);
+				grid-row-gap: 17px;
+			}
+		}
+
+		#display {
+			font-size: 1.2rem;
+			font-weight: 600;
+			height: calc(1.3rem + 50px);
+			width: 100%;
+			margin: 20px 0 15px;
+			padding: 25px;
+			border-radius: 10px;
+			background-color: var(--screen-background);
+			color: var(--light-text);
+			text-align: right;
+
+			&.theme-dark,
+			&.theme-light {
+				color: var(--dark-text);
+			}
+
+			@media screen and (max-width: 375px) {
+				font-size: 1.1rem;
+				font-weight: 500;
+				padding-left: 15px;
+				padding-right: 15px;
 			}
 		}
 	}
-
-	#keyboard {
-		display: grid;
-		grid-template-columns: repeat(4, 70px);
-		grid-template-rows: repeat(5, 42px);
-		grid-template-areas: '. . . del' '. . . .' '. . . .' 'dPoint zero . .' 'reset reset calculate calculate';
-		grid-auto-flow: row dense;
-		grid-column-gap: 17px;
-		grid-row-gap: 19px;
-		width: 100%;
-		padding: 22px;
-		border-radius: 10px;
-		background-color: var(--keypad-background);
-
-		.digit:nth-of-type(3n + 1) {
-			grid-column-start: 3;
-		}
-
-		.digit:nth-of-type(3n + 2) {
-			grid-column-start: 2;
-		}
-
-		.digit:nth-of-type(3n + 3) {
-			grid-column-start: 1;
-		}
-
-		.digit:nth-of-type(10) {
-			grid-area: zero;
-		}
-
-		#decimalPoint {
-			grid-area: dPoint;
-		}
-
-		#deleteBtn {
-			grid-area: del;
-		}
-
-		#resetBtn {
-			grid-area: reset;
-		}
-
-		#calculateBtn {
-			grid-area: calculate;
-		}
-	}
-
-	#display {
-		font-size: 1.2rem;
-		font-weight: 700;
-		height: calc(1.3rem + 50px);
-		width: 100%;
-		margin: 20px 0 15px;
-		padding: 25px;
-		border-radius: 10px;
-		background-color: var(--screen-background);
-		color: var(--light-text);
-		text-align: right;
-		white-space: normal;
-		overflow: hidden;
-		word-break: break-word;
-
-		&.theme-dark, &.theme-light {
-			color: var(--dark-text);
-		}
-	}
-}
 }

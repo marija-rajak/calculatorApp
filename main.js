@@ -7,6 +7,9 @@ const themeSelector = document.getElementsByName('theme');
 const elements = document.querySelectorAll('*');
 let display = document.getElementById('display');
 
+const mediaQuery = window.matchMedia('(min-width: 375px)');
+let wideScreen = mediaQuery.matches;
+
 let tempNumber;
 let startNumber;
 let nextNumber;
@@ -14,6 +17,15 @@ let result;
 let operator;
 
 let theme = 'default';
+
+//Listen to window width changes
+mediaQuery.addEventListener('change', function () {
+	if (mediaQuery.matches) {
+		wideScreen = true;
+	} else {
+		wideScreen = false;
+	}
+});
 
 //Indicate of calculation started
 let processing = false;
@@ -220,12 +232,25 @@ function setTheme() {
 
 //Set display to smaller and lighter font
 function shrink() {
-	display.style.fontSize = '0.9rem';
-	display.style.fontWeight = '500';
+	if (wideScreen) {
+		display.style.fontSize = '0.9rem';
+		display.style.fontWeight = '500';
+
+	} else {
+		display.style.fontSize = '0.8rem';
+		display.style.fontWeight = '500';
+
+	}
+
 }
 
 //Set display to bigger and bolder font
 function expand() {
-	display.style.fontSize = '1.2rem';
-	display.style.fontWeight = '700';
+	if (wideScreen) {
+		display.style.fontSize = '1.2rem';
+		display.style.fontWeight = '600';
+	} else {
+		display.style.fontSize = '1.1rem';
+		display.style.fontWeight = '500';
+	}
 }
