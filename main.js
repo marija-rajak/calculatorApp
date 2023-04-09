@@ -115,9 +115,13 @@ function typeNumber() {
 function getOperator(value) {
 
 	if (startNumber || startNumber === 0) {
+
+		if (operator) {
+			display.innerText = display.innerText.replace(operator, '');
+		}
+
 		processing = true;
 		operator = value;
-
 		display.innerText += operator;
 
 		if (display.innerText.length >= 15) {
