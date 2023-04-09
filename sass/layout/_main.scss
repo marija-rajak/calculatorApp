@@ -113,6 +113,9 @@ body {
 		background-color: var(--screen-background);
 		color: var(--light-text);
 		text-align: right;
+		white-space: normal;
+		overflow: hidden;
+		word-break: break-word;
 
 		&.theme-dark, &.theme-light {
 			color: var(--dark-text);
